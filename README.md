@@ -65,7 +65,7 @@ con dos empleadores.
 ### Flujo típico
 
 ```bash
-python scripts/plazos.py 1000077617     # cuándo vence
+python scripts/plazos.py 79123456     # cuándo vence
 cp scripts/datos.ejemplo.json datos.json # rellenar con los datos del caso
 python scripts/validar.py                # controles independientes
 python scripts/generar.py                # F210 / F160 / F490

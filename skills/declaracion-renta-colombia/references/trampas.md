@@ -16,7 +16,7 @@ después se suman los resultados.
 **Cómo se descubrió:** la hoja `renta exenta` del Programa Ayuda Renta oficial
 calcula `N14 = LOOKUP(M14, tabla) × L14` fila por fila, una por empleador.
 
-En un caso real: Microsoft con promedio de 511,82 UVT → 60 % exento; Javeriana
+En un caso real: un empleador con promedio de 511,82 UVT → 60 % exento; el otro
 con 75,95 UVT → 100 % exento. Consolidados habrían dado un porcentaje único y
 peor.
 

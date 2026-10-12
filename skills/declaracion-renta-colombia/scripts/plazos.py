@@ -8,8 +8,8 @@ los DOS ULTIMOS DIGITOS del NIT o la cedula, en pares: 01-02, 03-04, ...
 de ahi se avanza un dia habil por par.
 
 Uso:
-    python plazos.py 21061083
-    python plazos.py 21061083 --anio 2026
+    python plazos.py 79123456
+    python plazos.py 79123456 --anio 2026
     python plazos.py --tabla
 
 IMPORTANTE: verifique SIEMPRE el resultado contra el decreto de plazos del
