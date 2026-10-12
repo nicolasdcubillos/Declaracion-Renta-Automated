@@ -1,0 +1,158 @@
+{
+  "_comentario": "UNICO ARCHIVO QUE DEBE EDITARSE. Rellene con los datos del contribuyente y ejecute: python validar.py && python generar.py",
+  "contribuyente": {
+    "nit": "",
+    "dv": "",
+    "primer_apellido": "",
+    "segundo_apellido": "",
+    "primer_nombre": "",
+    "otros_nombres": "",
+    "direccion_seccional_codigo": "32",
+    "direccion_seccional_nombre": "Impuestos de Bogota",
+    "actividad_economica": "",
+    "direccion": "",
+    "ciudad": "",
+    "codigo_postal": "",
+    "email": "",
+    "anio_gravable": 2025,
+    "fecha_vencimiento": "(calcular con: python plazos.py <cedula>)"
+  },
+  "parametros": {
+    "uvt_ano_gravable": 49799,
+    "uvt_ano_siguiente": 52374,
+    "trm_cierre": "3757.08",
+    "trm_promedio": "4052.86",
+    "componente_inflacionario": "0.5543",
+    "pct_anticipo": "0.75",
+    "_nota": "UVT 2025 Res.000193/2024 | UVT 2026 Res.000238/2025 | componente inflacionario 2025 Decreto 0898/2026. pct_anticipo: 0.75 declarante habitual, 0.25 primera declaracion."
+  },
+  "opciones": {
+    "criterio_cesantias": "por_empleador",
+    "numero_dependientes": 0,
+    "tarifa_ganancia_ocasional": "0.15",
+    "_criterio_cesantias": "por_empleador es el criterio del Programa Ayuda Renta oficial de la DIAN: la tabla del art. 206-4 se aplica al promedio de CADA empleador por separado."
+  },
+  "empleadores": [
+    {
+      "nombre": "",
+      "nit": "",
+      "salarios": 0,
+      "prestaciones": 0,
+      "otros_pagos": 0,
+      "cesantias_pagadas": 0,
+      "cesantias_fondo": 0,
+      "aporte_salud": 0,
+      "aporte_pension": 0,
+      "promedio_6_meses": 0,
+      "retencion": 0,
+      "_fuente": "Certificado de Ingresos y Retenciones (formulario 220). salarios = casilla 36 + 37; prestaciones = 42; otros_pagos = 46; aporte_salud = 53; aporte_pension = 54; promedio_6_meses = 59; retencion = 60."
+    }
+  ],
+  "pensiones": [
+    {
+      "entidad": "",
+      "nit": "",
+      "concepto": "",
+      "ingreso_bruto": 0,
+      "aporte_salud": 0,
+      "mesadas": 13,
+      "_nota": "mesadas: 13 en el regimen de prima media (incluye mesada adicional). La exencion del art. 206 num.5 es de 1.000 UVT MENSUALES."
+    }
+  ],
+  "rentas_capital": [
+    {
+      "entidad": "",
+      "rendimiento": 0,
+      "incrngo": null,
+      "retencion": 0,
+      "gmf": 0,
+      "_nota": "incrngo null => el motor aplica el componente inflacionario del ano. Ponga el valor explicito si el certificado ya lo trae calculado, o 0 si el ingreso NO es un rendimiento financiero (p.ej. retiros de aportes voluntarios del art. 126-1)."
+    }
+  ],
+  "deducciones": {
+    "base_factura_electronica": 0,
+    "icetex_intereses_pagados": 0,
+    "intereses_vivienda": 0,
+    "aportes_afc_fvp": 0,
+    "dependientes_art387": 0,
+    "medicina_prepagada": 0,
+    "_base_factura_electronica": "Use el renglon 'Monto total de facturacion electronica susceptible de beneficio' de la exogena. NO los consumos con tarjeta ni el 'Tope 5 - Compras'.",
+    "_dependientes_art387": "10% de los ingresos brutos laborales, tope 32 UVT/mes (384 UVT/ano). Con relacion laboral se acumula con los 72 UVT de la casilla 139."
+  },
+  "rentas_no_laborales": {
+    "otros_ingresos": [
+      {
+        "concepto": "",
+        "valor": 0
+      }
+    ],
+    "enajenacion_acciones": {
+      "activar": false,
+      "costo_unitario_usd": "0",
+      "acciones_vendidas_con_ese_costo": 0,
+      "ventas": [
+        {
+          "fecha": "",
+          "titulo": "",
+          "cantidad": 0,
+          "precio_usd": "0",
+          "producto_usd": "0",
+          "costo_usd": null
+        }
+      ]
+    }
+  },
+  "dividendos_exterior": [
+    {
+      "entidad": "",
+      "dividendo_usd": 0,
+      "impuesto_usa_usd": 0
+    }
+  ],
+  "ganancias_ocasionales": {
+    "enajenaciones": [
+      {
+        "concepto": "",
+        "informante": "",
+        "retencion": 0,
+        "tarifa_retencion": "0.01",
+        "costo_fiscal": null
+      }
+    ],
+    "no_gravadas_exentas": 0,
+    "_nota": "costo_fiscal null => se asume igual al precio de venta (ganancia cero). tarifa_retencion 0.01 para vehiculos e inmuebles."
+  },
+  "patrimonio": {
+    "activos": [
+      {
+        "descripcion": "",
+        "valor_cop": 0,
+        "exterior": false,
+        "norma": "Art. 268 ET"
+      }
+    ],
+    "deudas": [
+      {
+        "descripcion": "",
+        "valor_cop": 0
+      }
+    ],
+    "_inmuebles": "Art. 277 ET: el MAYOR entre costo de adquisicion, costo fiscal, autoavaluo y avaluo catastral.",
+    "_exterior": "exterior=true activa el Formulario 160 si el total supera 2.000 UVT del ano siguiente."
+  },
+  "retenciones_adicionales": [
+    {
+      "concepto": "",
+      "valor": 0
+    }
+  ],
+  "liquidacion_previa": {
+    "anticipo_ano_anterior": 0,
+    "saldo_favor_ano_anterior": 0,
+    "sanciones": 0,
+    "aporte_voluntario_art244_1": 0,
+    "_anticipo_ano_anterior": "casilla 133 de la declaracion del ano anterior -> va a la casilla 130 de esta.",
+    "_saldo_favor_ano_anterior": "casilla 137 del ano anterior, si no se pidio en devolucion -> casilla 131.",
+    "_sanciones": "casilla 135. Si presenta fuera de plazo liquide el art. 641 y recuerde la minima del art. 639 (10 UVT del ano de presentacion)."
+  }
+}

@@ -1,0 +1,17 @@
+# Datos reales de contribuyentes: NUNCA se versionan
+datos.json
+.escenario.json
+salida/
+*.pdf
+*.xlsx
+*.xlsm
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Sistema
+.DS_Store
