@@ -50,7 +50,8 @@ def validar(L=None, verbose=True):
 
     # ---- topes y limites
     # ---- cedula de pensiones (art. 206 num.5 ET)
-    pen = L.dat.get("pensiones", [])
+    # mismo filtro que el motor: las entradas en cero no crean cedula
+    pen = [x for x in L.dat.get("pensiones", []) if x.get("ingreso_bruto")]
     if pen:
         chk("c99 = suma pensiones brutas", sum(x["ingreso_bruto"] for x in pen), R[99])
         chk("c100 = aportes salud pension",
